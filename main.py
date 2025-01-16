@@ -19,8 +19,12 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
+        # update and draw game objects
         screen.fill((0, 0, 0))
+        player.update(dt)
         player.draw(screen)
+
+        # render updated game state and tick game clock
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 
